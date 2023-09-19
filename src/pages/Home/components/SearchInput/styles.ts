@@ -30,6 +30,8 @@ export const SearchInputStyled = styled.input`
   background: ${props => props.theme['base-input']};
   color: ${props => props.theme['base-text']};
 
+  margin-bottom: 3rem;
+
   &::placeholder {
     color: ${props => props.theme['base-label']};
   }
