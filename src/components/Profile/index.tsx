@@ -6,6 +6,7 @@ import { faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faBuilding } from '@fortawesome/free-solid-svg-icons/faBuilding'
 import { faUserGroup } from '@fortawesome/free-solid-svg-icons/faUserGroup'
+import { ExternalLink } from '../ExternalLink'
 
 
 export const Profile = () => {
@@ -22,10 +23,10 @@ export const Profile = () => {
               <h2>Eduardo Luis Borba</h2>
             </div>
             <div>
-              <a href="#" target="_blank">
+              <ExternalLink href='#' target='_blank'>
                 GITHUB
                 <FontAwesomeIcon icon={faUpRightFromSquare} style={{color: "#3294f8",}} />
-              </a>
+              </ExternalLink>
             </div>
           </BoxName>
 

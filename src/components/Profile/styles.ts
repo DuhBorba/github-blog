@@ -40,22 +40,6 @@ export const ProfileInfo = styled.div`
     line-height: 1.95rem;
   }
 
-  a{
-    color: ${props => props.theme.blue};
-    font-size: 0.75rem;
-    font-weight: 700;
-    line-height: 1.2rem;
-    text-decoration: none;
-    
-    svg{
-      margin-left: 0.5rem;
-    }
-
-    &:hover{
-      text-decoration: underline;
-    }
-  }
-
   h3{
     margin: 0.5rem 0 1.5rem;
   }
