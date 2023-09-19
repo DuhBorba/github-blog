@@ -1,12 +1,12 @@
 import React from 'react'
 import { AvatarContainer, BoxName, InfosGithub, ProfileCard, ProfileContainer, ProfileInfo } from './styles'
-import Avatar from '../../assets/avatar.jpg'
+import Avatar from '../../../../assets/avatar.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faBuilding } from '@fortawesome/free-solid-svg-icons/faBuilding'
 import { faUserGroup } from '@fortawesome/free-solid-svg-icons/faUserGroup'
-import { ExternalLink } from '../ExternalLink'
+import { ExternalLink } from '../../../../components/ExternalLink'
 
 
 export const Profile = () => {
