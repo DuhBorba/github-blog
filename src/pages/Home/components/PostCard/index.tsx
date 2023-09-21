@@ -1,19 +1,26 @@
 import React from 'react'
 import { PostCardBox } from './styled'
 
-export const PostCard = () => {
+import { PostsProps } from '../..'
+import { dateFormatter } from '../../../../utils/formatter'
+
+interface PostCardProps {
+  post: PostsProps
+}
+
+
+export const PostCard = ({post}: PostCardProps) => {
+  const formatterData = dateFormatter(post.created_at)
+  
   return (
     <PostCardBox>
       <div>
-        <h3>JavaScript data types and data structures</h3>
-        <span>Há 1 dia</span>
+        <h3>{post.title}</h3>
+        <span>{formatterData}</span>
       </div>
 
       <p>
-        Programming languages all have built-in data structures, 
-        but these often differ from one language to another. This 
-        article attempts to list the built-in data structures 
-        available in...
+        {post.body}
       </p>
     </PostCardBox>
   )

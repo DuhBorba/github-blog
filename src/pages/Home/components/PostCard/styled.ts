@@ -21,6 +21,10 @@ export const PostCardBox = styled.div`
       font-weight: 700;
       line-height: 2rem;
       width: 80%;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
     }
     span{
       color: ${props => props.theme['base-span']};
@@ -35,6 +39,10 @@ export const PostCardBox = styled.div`
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.6rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
   }
 
   &:hover {

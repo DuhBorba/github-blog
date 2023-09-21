@@ -10,6 +10,6 @@ export const ContainerPosts = styled.div`
 export const GridPosts = styled.div`
   display: grid;
   align-items: stretch;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
   gap: 2rem;
 `
