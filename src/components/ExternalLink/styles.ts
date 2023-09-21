@@ -9,6 +9,7 @@ export const ExternalButton = styled.a`
 
   svg{
     margin: 0 0.5rem;
+    color: #3294f8;
   }
 
   &:hover{

@@ -53,7 +53,7 @@ export const Profile = () => {
             <div>
               <ExternalLink href={profileData.html_url} target='_blank'>
                 GITHUB
-                <FontAwesomeIcon icon={faUpRightFromSquare} style={{color: "#3294f8",}} />
+                <FontAwesomeIcon icon={faUpRightFromSquare} />
               </ExternalLink>
             </div>
           </BoxName>
@@ -64,18 +64,18 @@ export const Profile = () => {
 
           <InfosGithub>
             <div>
-            <FontAwesomeIcon icon={faGithub} style={{color: "#3a536b",}} />
+            <FontAwesomeIcon icon={faGithub} />
               <p>{profileData.login}</p>
             </div>
             {
               profileData.company && 
               <div>
-                <FontAwesomeIcon icon={faBuilding} style={{color: "#3a536b",}} />
+                <FontAwesomeIcon icon={faBuilding} />
                 <p>{profileData.company}</p>
               </div>
             }
             <div>
-              <FontAwesomeIcon icon={faUserGroup} style={{color: "#3a536b",}} />
+              <FontAwesomeIcon icon={faUserGroup} />
               {
                 profileData.followers <= 1 ? 
                 <p>{profileData.followers} seguidor</p> : 

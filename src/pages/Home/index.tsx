@@ -14,6 +14,11 @@ export interface PostsProps {
   body: string
   created_at: string
   number: number
+  html_url: string
+  comments: number
+  user: {
+    login: string
+  }
 }
 
 export const Home = () => {
@@ -44,7 +49,7 @@ export const Home = () => {
             posts.length <= 0 ? 
             <p>Nenhuma publicação encontrada :&#40;</p> : 
             posts.map(post => (
-              <PostCard  key={post.number} post={post} />
+              <PostCard key={post.number} post={post} />
             ))
           }
         </GridPosts>

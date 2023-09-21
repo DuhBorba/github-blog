@@ -4,43 +4,57 @@ import { ExternalLink } from '../../../../components/ExternalLink'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarDay, faChevronLeft, faComment, faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { PostsProps } from '../../../Home'
+import { dateFormatter } from '../../../../utils/formatter'
 
-export const PostTitle = () => {
+interface PostTitleProps {
+  postData: PostsProps
+}
+
+export const PostTitle = ({ postData }: PostTitleProps) => {
+
+  const formatterData = dateFormatter(postData.created_at)
+
   return (
     <TitlePostContainer>
       <TitlePostCard>
         
           <BoxNavegation>
             <div>
-              <ExternalLink href='#' target='_blank'>
-                <FontAwesomeIcon icon={faChevronLeft} style={{color: "#3294f8",}} />
+              <ExternalLink href='/'>
+                <FontAwesomeIcon icon={faChevronLeft} />
                 VOLTAR
               </ExternalLink>
             </div>
             <div>
-              <ExternalLink href='#' target='_blank'>
+              <ExternalLink href={postData.html_url} target='_blank'>
                 VER NO GITHUB
-                <FontAwesomeIcon icon={faUpRightFromSquare} style={{color: "#3294f8",}} />
+                <FontAwesomeIcon icon={faUpRightFromSquare} />
               </ExternalLink>
             </div>
           </BoxNavegation>
 
           <h1>
-            JavaScript data types and data structures
+            {postData.title}
           </h1>
 
           <InfosPost>
             <div>
-            <FontAwesomeIcon icon={faGithub} style={{color: "#3a536b",}} />
-              <p>duhborba</p>
+              <FontAwesomeIcon icon={faGithub} />
+              {postData.user && <p>{postData.user.login}</p>}
+              {/* Erro  postData.user.login */}
             </div>
             <div>
-              <FontAwesomeIcon icon={faCalendarDay} style={{color: "#3a536b",}} />
-              <p>Há 1 dia</p>
+              <FontAwesomeIcon icon={faCalendarDay} />
+              <p>{formatterData}</p>
             </div>
             <div>
-              <FontAwesomeIcon icon={faComment} style={{color: "#3a536b",}} />
-              <p>5 comentários</p>
+              <FontAwesomeIcon icon={faComment} />
+              {
+                postData.comments <= 1 ? 
+                <p>{postData.comments} comentário</p> :
+                <p>{postData.comments} comentários</p> 
+              }
             </div>
           </InfosPost>
 

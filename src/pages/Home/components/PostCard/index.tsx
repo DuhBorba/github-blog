@@ -13,7 +13,7 @@ export const PostCard = ({post}: PostCardProps) => {
   const formatterData = dateFormatter(post.created_at)
   
   return (
-    <PostCardBox>
+    <PostCardBox to={`post/${post.number}`}>
       <div>
         <h3>{post.title}</h3>
         <span>{formatterData}</span>

@@ -76,6 +76,7 @@ export const InfosGithub = styled.div`
     svg{
       width: 1.125rem;
       height: 1.125rem;
+      color: #3a536b;
     }
   }
 `
