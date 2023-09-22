@@ -18,10 +18,14 @@ export const ProfileCard = styled.div`
 `
 
 export const ProfileDetails = styled.div`
-  display: grid;
-  grid-template-columns: 14.25rem 1fr;
+  display: flex;
+  gap: 2rem;
   align-items: center;
   width: 100%;
+  
+  @media(max-width: 768px) {
+    flex-direction: column;
+  }
 `
 
 export const AvatarContainer = styled.div`
@@ -37,6 +41,7 @@ export const ProfileInfo = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  width: 100%;
 
   h3{
     color: ${props => props.theme['base-title']};
@@ -61,6 +66,7 @@ export const BoxName = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap-reverse;
 
   svg{
       width: 0.75rem;
@@ -72,6 +78,11 @@ export const InfosGithub = styled.div`
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  flex-wrap: wrap;
+
+  @media(max-width: 768px) {
+    gap: 0.5rem;
+  }
 
   div{
     display: flex;

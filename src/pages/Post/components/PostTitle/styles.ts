@@ -31,12 +31,18 @@ export const BoxNavegation = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 `
 
 export const InfosPost = styled.div`
   display: flex;
   align-items: center;
   gap: 2rem;
+  flex-wrap: wrap;
+
+  @media(max-width: 480px) {
+    gap: 0.5rem;
+  }
 
   div{
     display: flex;

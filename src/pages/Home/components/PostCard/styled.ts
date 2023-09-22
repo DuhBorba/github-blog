@@ -11,9 +11,9 @@ export const PostCardBox = styled(Link)`
 
   div{
     display: flex;
-    align-items: flex-start;
     justify-content: space-between;
     gap: 1rem;
+    flex-wrap: wrap-reverse;
 
     margin-bottom: 1.25rem;
 
