@@ -23,19 +23,19 @@ export interface PostsProps {
 }
 
 export const Home = () => {
-
-  const [ posts, setPosts ] = React.useState<PostsProps[]>([])
-  const [ isLoading, setIsLoading ] = React.useState(true)
+  const [posts, setPosts] = React.useState<PostsProps[]>([])
+  const [isLoading, setIsLoading] = React.useState(true)
 
   async function getPosts(query: string = '') {
-    try{
+    try {
       setIsLoading(true)
-      const response = await api.get(`/search/issues?q=${query}%20repo:${username}/${blog}`)
-      
+      const response = await api.get(
+        `/search/issues?q=${query}%20repo:${username}/${blog}`,
+      )
+
       setPosts(response.data.items)
-    }
-    finally{
-        setIsLoading(false)
+    } finally {
+      setIsLoading(false)
     }
   }
 
@@ -50,20 +50,18 @@ export const Home = () => {
       <Profile />
 
       <ContainerPosts>
-      <SearchInput quantityPost={posts.length} getPosts={getPosts} />
-        {
-          isLoading ? 
-          <Spinner /> : 
+        <SearchInput quantityPost={posts.length} getPosts={getPosts} />
+        {isLoading ? (
+          <Spinner />
+        ) : (
           <GridPosts>
-            {
-              posts.length <= 0 ? 
-              <p>Nenhuma publicação encontrada :&#40;</p> : 
-              posts.map(post => (
-                <PostCard key={post.number} post={post} />
-                ))
-            }
+            {posts.length <= 0 ? (
+              <p>Nenhuma publicação encontrada :&#40;</p>
+            ) : (
+              posts.map((post) => <PostCard key={post.number} post={post} />)
+            )}
           </GridPosts>
-        }
+        )}
       </ContainerPosts>
     </>
   )

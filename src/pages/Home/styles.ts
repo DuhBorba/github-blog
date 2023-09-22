@@ -12,8 +12,8 @@ export const GridPosts = styled.div`
   align-items: stretch;
   grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
   gap: 2rem;
-  
-  @media(max-width: 480px) {
+
+  @media (max-width: 480px) {
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   }
 `

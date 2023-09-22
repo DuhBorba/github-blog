@@ -7,7 +7,11 @@ interface ExternalLinkProps {
   children: React.ReactNode
 }
 
-export const ExternalLink = ({href, target = '_self', children} : ExternalLinkProps) => {
+export const ExternalLink = ({
+  href,
+  target = '_self',
+  children,
+}: ExternalLinkProps) => {
   return (
     <ExternalButton href={href} target={target}>
       {children}

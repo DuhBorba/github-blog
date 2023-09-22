@@ -8,10 +8,9 @@ interface PostCardProps {
   post: PostsProps
 }
 
-
-export const PostCard = ({post}: PostCardProps) => {
+export const PostCard = ({ post }: PostCardProps) => {
   const formatterData = dateFormatter(post.created_at)
-  
+
   return (
     <PostCardBox to={`post/${post.number}`}>
       <div>
@@ -19,9 +18,7 @@ export const PostCard = ({post}: PostCardProps) => {
         <span>{formatterData}</span>
       </div>
 
-      <p>
-        {post.body}
-      </p>
+      <p>{post.body}</p>
     </PostCardBox>
   )
 }

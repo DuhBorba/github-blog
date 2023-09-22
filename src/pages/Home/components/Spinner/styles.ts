@@ -6,12 +6,12 @@ export const SpinnerLoading = styled.div`
   align-items: center;
   margin: 0 auto;
 
-  span{
+  span {
     width: 48px;
     height: 48px;
     border-radius: 50%;
     display: inline-block;
-    border-top: 3px solid ${props => props.theme.blue};
+    border-top: 3px solid ${(props) => props.theme.blue};
     border-right: 3px solid transparent;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
@@ -24,5 +24,5 @@ export const SpinnerLoading = styled.div`
     100% {
       transform: rotate(360deg);
     }
-  } 
+  }
 `
