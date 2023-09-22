@@ -8,11 +8,15 @@ export const TitlePostContainer = styled.div`
 `
 
 export const TitlePostCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin-top: -5.5rem;
   padding: 2rem 2.5rem;
   background: ${props => props.theme['base-profile']};
   border-radius: 10px;
   box-shadow: 0px 2px 28px 0px rgba(0, 0, 0, 0.20);
+  min-height: 10.5rem;
 
   h1{
     color: ${props => props.theme['base-title']};

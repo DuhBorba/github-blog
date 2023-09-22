@@ -13,22 +13,30 @@ export const Post = () => {
   const { issueNumber } = useParams()
 
   const [ postData, setPostData ] = React.useState<PostsProps>({} as PostsProps)
+  const [ isLoading, setIsLoading ] = React.useState(true)
 
-  async function getPostTitle() {
-    const response = await api.get(`/repos/${username}/${blog}/issues/${issueNumber}`)
-    setPostData(response.data)
+  async function getPostData() {
+    try{
+      setIsLoading(true)
+
+      const response = await api.get(`/repos/${username}/${blog}/issues/${issueNumber}`)
+      setPostData(response.data)
+    }
+    finally{
+        setIsLoading(false)
+    }
   }
 
   React.useEffect(() => {
-    getPostTitle()
+    getPostData()
   }, [])
 
   return (
     <>
       <Header />
       
-      <PostTitle postData={postData} />
-      <PostContent postData={postData} />
+      <PostTitle postData={postData} isLoading={isLoading} />
+      <PostContent postData={postData} isLoading={isLoading} />
     </>
   )
 }
