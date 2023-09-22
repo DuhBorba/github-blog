@@ -41,8 +41,7 @@ export const PostTitle = ({ postData }: PostTitleProps) => {
           <InfosPost>
             <div>
               <FontAwesomeIcon icon={faGithub} />
-              {postData.user && <p>{postData.user.login}</p>}
-              {/* Erro  postData.user.login */}
+              <p>{postData.user?.login}</p>
             </div>
             <div>
               <FontAwesomeIcon icon={faCalendarDay} />

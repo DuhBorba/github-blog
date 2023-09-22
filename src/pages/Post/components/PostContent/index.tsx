@@ -15,15 +15,15 @@ export const PostContent = ({ postData }: PostContentProps) => {
       <ReactMarkdown 
         children={postData.body}
         components={{
-          code({ node, inline, className, children, ...props }) {
+          code({ inline, className, children, ...props }) {
             const match = /language-(\w+)/.exec(className || "");
             return !inline && match ? (
               <SyntaxHighlighter
                 children={String(children).replace(/\n$/, "")}
-                style={dracula as any}
                 language={match[1]}
                 PreTag="div"
                 {...props}
+                style={dracula}
               />
             ) : (
               <code className={className} {...props}>
@@ -33,7 +33,6 @@ export const PostContent = ({ postData }: PostContentProps) => {
           },
         }}
       />
-      {/* Erro React Markdown */}
     </PostContentContainer>
   )
 }
