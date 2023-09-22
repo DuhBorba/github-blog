@@ -16,7 +16,7 @@ import {
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { PostsProps } from '../../../Home'
 import { dateFormatter } from '../../../../utils/formatter'
-import { Spinner } from '../../../Home/components/Spinner'
+import { Spinner } from '../../../../components/Spinner'
 
 interface PostTitleProps {
   postData: PostsProps

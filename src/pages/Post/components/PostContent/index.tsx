@@ -4,7 +4,7 @@ import { PostsProps } from '../../../Home'
 import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism'
-import { Spinner } from '../../../Home/components/Spinner'
+import { Spinner } from '../../../../components/Spinner'
 
 interface PostContentProps {
   postData: PostsProps

@@ -15,7 +15,7 @@ import { faBuilding } from '@fortawesome/free-solid-svg-icons/faBuilding'
 import { faUserGroup } from '@fortawesome/free-solid-svg-icons/faUserGroup'
 import { ExternalLink } from '../../../../components/ExternalLink'
 import { api } from '../../../../lib/axios'
-import { Spinner } from '../Spinner'
+import { Spinner } from '../../../../components/Spinner'
 
 const username = import.meta.env.VITE_GITHUB_USERNAME
 

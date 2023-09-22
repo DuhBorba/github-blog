@@ -15,10 +15,10 @@ export const Post = () => {
   const [postData, setPostData] = React.useState<PostsProps>({} as PostsProps)
   const [isLoading, setIsLoading] = React.useState(true)
 
-  async function getPostData() {
+  const getPostData = React.useCallback(async () => {
     try {
       setIsLoading(true)
-
+      console.log('rendering post')
       const response = await api.get(
         `/repos/${username}/${blog}/issues/${issueNumber}`,
       )
@@ -26,11 +26,11 @@ export const Post = () => {
     } finally {
       setIsLoading(false)
     }
-  }
+  }, [issueNumber])
 
   React.useEffect(() => {
     getPostData()
-  }, [])
+  }, [getPostData])
 
   return (
     <>

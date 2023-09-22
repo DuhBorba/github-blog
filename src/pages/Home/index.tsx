@@ -5,7 +5,7 @@ import { SearchInput } from './components/SearchInput'
 import { ContainerPosts, GridPosts } from './styles'
 import { PostCard } from './components/PostCard'
 import { api } from '../../lib/axios'
-import { Spinner } from './components/Spinner'
+import { Spinner } from '../../components/Spinner'
 
 const username = import.meta.env.VITE_GITHUB_USERNAME
 const blog = import.meta.env.VITE_GITHUB_BLOG
@@ -26,22 +26,25 @@ export const Home = () => {
   const [posts, setPosts] = React.useState<PostsProps[]>([])
   const [isLoading, setIsLoading] = React.useState(true)
 
-  async function getPosts(query: string = '') {
-    try {
-      setIsLoading(true)
-      const response = await api.get(
-        `/search/issues?q=${query}%20repo:${username}/${blog}`,
-      )
+  const getPosts = React.useCallback(
+    async (query: string = '') => {
+      try {
+        setIsLoading(true)
+        const response = await api.get(
+          `/search/issues?q=${query}%20repo:${username}/${blog}`,
+        )
 
-      setPosts(response.data.items)
-    } finally {
-      setIsLoading(false)
-    }
-  }
+        setPosts(response.data.items)
+      } finally {
+        setIsLoading(false)
+      }
+    },
+    [setPosts, setIsLoading],
+  )
 
   React.useEffect(() => {
     getPosts()
-  }, [])
+  }, [getPosts])
 
   return (
     <>
