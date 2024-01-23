@@ -1,27 +1,26 @@
-# React + TypeScript + Vite
+# github-blog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Sobre este projeto
+Neste desafio, criamos uma aplicação que faz uso da API do GitHub para recuperar issues de um repositório, bem como dados do perfil do usuário, apresentando essas informações de maneira semelhante a um blog.
 
-Currently, two official plugins are available:
+### Rocketseat
+A [Rocketseat](https://rocketseat.com.br) oferece através de uma plataforma inteligente e metodologia prática, além de comunidade, eventos, conteúdo e conexão com o mercado de trabalho, todas as ferramentas que você precisa para masterizar no menor tempo possível as tecnologias mais modernas de desenvolvimento web e mobile, e dessa forma avançar para o próximo nível como programador.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Desenvolvimento
 
-## Expanding the ESLint configuration
+Para o desenvolvimento foi necessário:
+* Vite
+* Styled Components
+* Typescript
+* React Router Dom
+* React Hook Form
+* Axios
+* API do Github
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Resultado
 
-- Configure the top-level `parserOptions` property like this:
+![GIF Exemplo](https://github.com/DuhBorba/github-blog/blob/main/example.gif)
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Autores
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+* [Eduardo Luis Borba](https://github.com/DuhBorba) :rocket:
